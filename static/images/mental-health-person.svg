@@ -12,10 +12,20 @@
 <stop offset="0%" style="stop-color:#F8FBFF;stop-opacity:1" />
 <stop offset="100%" style="stop-color:#E7F3FF;stop-opacity:1" />
 </radialGradient>
+<!-- Added gradient for sensational text -->
+<linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#6DD3FF;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#A78BFA;stop-opacity:1" />
+</linearGradient>
+<!-- Added gradient for the box text -->
+<linearGradient id="boxTextGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#6DD3FF;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#A78BFA;stop-opacity:1" />
+</linearGradient>
 </defs>
 
 <!-- Background -->
-<rect width="400" height="500" fill="url(#bg)"/>
+<rect width="400" height="500" fill="url(#bg)" rx="20" />
 
 <!-- Shoulders -->
 <ellipse cx="200" cy="470" rx="120" ry="40" fill="url(#skin)"/>
@@ -70,5 +80,59 @@
 <circle cx="200" cy="250" r="150" fill="none" stroke="#6DD3FF" stroke-width="2" opacity="0.3"/>
 <circle cx="200" cy="250" r="180" fill="none" stroke="#A78BFA" stroke-width="1" opacity="0.2"/>
 
-<text x="200" y="490" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#63748A" opacity="0.7">Calm &amp; Connected</text>
+<!-- Updated text with modern styling -->
+<text x="200" y="455" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="url(#textGradient)" opacity="1" style="text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);">Calm &amp; Connected</text>
+
+<!-- Hero content card (replaces empty blue box) -->
+<!-- card background + inner shadow filter -->
+<defs>
+	<linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+		<stop offset="0%" style="stop-color:rgba(255,255,255,0.95);stop-opacity:1"/>
+		<stop offset="100%" style="stop-color:rgba(247,249,255,0.9);stop-opacity:1"/>
+	</linearGradient>
+	<filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+		<feOffset dx="0" dy="6"/>
+		<feGaussianBlur stdDeviation="8" result="offset-blur"/>
+		<feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+		<feFlood flood-color="#000" flood-opacity="0.15" result="color"/>
+		<feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+		<feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+	</filter>
+	<!-- subtle outer drop shadow for lift -->
+	<filter id="outerShadow" x="-50%" y="-50%" width="200%" height="200%">
+	  <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0b1f35" flood-opacity="0.12" />
+	</filter>
+	<!-- small accent gradient on left of the card -->
+	<linearGradient id="accent" x1="0%" y1="0%" x2="0%" y2="100%">
+		<stop offset="0%" style="stop-color:#7DD3FC;stop-opacity:1" />
+		<stop offset="100%" style="stop-color:#A78BFA;stop-opacity:1" />
+	</linearGradient>
+</defs>
+
+<g transform="translate(50,40)">
+	<!-- card shape -->
+	<rect x="0" y="0" width="300" height="160" rx="18" fill="url(#cardGradient)" filter="url(#outerShadow)" />
+
+	<!-- accent bar -->
+	<rect x="-6" y="12" width="8" height="136" rx="4" fill="url(#accent)" opacity="0.95"/>
+
+	<!-- small image / gradient preview inside card -->
+	<rect x="20" y="16" width="260" height="56" rx="8" fill="url(#textGradient)" opacity="1" />
+	<rect x="26" y="22" width="120" height="40" rx="6" fill="#051428" opacity="0.15" />
+
+	<!-- title -->
+	<text x="22" y="94" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#0b2240">Small steps, steady support</text>
+
+	<!-- body copy -->
+	<text x="22" y="114" font-family="Inter, sans-serif" font-size="13" fill="#31485a" opacity="0.98">A compassionate hub of trusted information and tools to help you or someone you care about.</text>
+
+	<!-- CTA buttons -->
+	<g>
+		<rect x="22" y="122" rx="16" width="120" height="30" fill="#2EA6E0" />
+		<text x="82" y="142" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Read resources</text>
+
+		<rect x="162" y="122" rx="16" width="118" height="30" fill="rgba(255,255,255,0.85)" stroke="#e6ecf6" />
+		<text x="221" y="142" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0b2240" text-anchor="middle">Get help now</text>
+	</g>
+</g>
 </svg>
