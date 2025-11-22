@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Contact — Mentalhealth{% endblock %}
+
+{% block content %}
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <h1>Get Help & Contact</h1>
+        <p class="lede">We’re here to help — reach out for support, questions, or to share a story that might encourage others.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container contact">
+    <h1 class="sr-only">Contact / Get help</h1>
+
+    <div class="contact-grid">
+      <div class="contact-form card">
+        <p>If you need someone to listen, or want to inquire about resources, send a message below. This demo site will not actually send messages.</p>
+        <form onsubmit="event.preventDefault(); alert('This is a demo — message not sent.');">
+          <label>
+            Your name
+            <input type="text" name="name" required>
+          </label>
+
+          <label>
+            Your email
+            <input type="email" name="email" required>
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+
+          <button class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+
+      <aside class="contact-aside">
+        <div class="card highlight">
+          <h3>If this is an emergency</h3>
+          <p>Call emergency services in your country. For emotional crisis services, check your local hotlines or the resources page.</p>
+        </div>
+
+        <div class="card">
+          <h4>Confidential help</h4>
+          <p>We don’t collect or share user messages in this demo; a real deployment would use secure storage and approval flows.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+{% endblock %}

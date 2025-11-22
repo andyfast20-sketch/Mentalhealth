@@ -1,0 +1,74 @@
+<svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FDBB8D;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#F4A661;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="hair" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#69320C;stop-opacity:1" />
+</linearGradient>
+<radialGradient id="bg" cx="50%" cy="50%" r="70%">
+<stop offset="0%" style="stop-color:#F8FBFF;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#E7F3FF;stop-opacity:1" />
+</radialGradient>
+</defs>
+
+<!-- Background -->
+<rect width="400" height="500" fill="url(#bg)"/>
+
+<!-- Shoulders -->
+<ellipse cx="200" cy="470" rx="120" ry="40" fill="url(#skin)"/>
+
+<!-- Neck -->
+<rect x="180" y="350" width="40" height="80" fill="url(#skin)" rx="20"/>
+
+<!-- Face -->
+<ellipse cx="200" cy="280" rx="80" ry="100" fill="url(#skin)"/>
+
+<!-- Hair -->
+<ellipse cx="200" cy="200" rx="95" ry="100" fill="url(#hair)"/>
+<ellipse cx="200" cy="180" rx="85" ry="80" fill="url(#hair)"/>
+
+<!-- Eyes -->
+<ellipse cx="175" cy="260" rx="12" ry="15" fill="#2D3748"/>
+<ellipse cx="225" cy="260" rx="12" ry="15" fill="#2D3748"/>
+<circle cx="175" cy="260" r="4" fill="#FFFFFF"/>
+<circle cx="225" cy="260" r="4" fill="#FFFFFF"/>
+
+<!-- Eyebrows -->
+<path d="M160 240Q175 230 190 240" stroke="#69320C" stroke-width="3" fill="none"/>
+<path d="M210 240Q225 230 240 240" stroke="#69320C" stroke-width="3" fill="none"/>
+
+<!-- Nose -->
+<ellipse cx="200" cy="290" rx="8" ry="12" fill="#F4A661"/>
+
+<!-- Mouth -->
+<path d="M180 310Q200 325 220 310" stroke="#69320C" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+<!-- Soft smile lines around eyes -->
+<path d="M155 275Q135 285 145 300" stroke="#F4A661" stroke-width="1.5" fill="none" opacity="0.6"/>
+<path d="M245 275Q265 285 255 300" stroke="#F4A661" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+<!-- Subtle blush -->
+<circle cx="145" cy="300" r="15" fill="#F9A694" opacity="0.4"/>
+<circle cx="255" cy="300" r="15" fill="#F9A694" opacity="0.4"/>
+
+<!-- Clothing -->
+<rect x="120" y="400" width="160" height="100" fill="#6DD3FF" rx="20"/>
+<rect x="130" y="410" width="140" height="80" fill="#A78BFA" rx="15" opacity="0.8"/>
+
+<!-- Arms -->
+<ellipse cx="90" cy="420" rx="25" ry="60" fill="url(#skin)" transform="rotate(-30 100 420)"/>
+<ellipse cx="310" cy="420" rx="25" ry="60" fill="url(#skin)" transform="rotate(30 300 420)"/>
+
+<!-- Hands -->
+<circle cx="70" cy="470" r="20" fill="url(#skin)"/>
+<circle cx="330" cy="470" r="20" fill="url(#skin)"/>
+
+<!-- Soft aura -->
+<circle cx="200" cy="250" r="150" fill="none" stroke="#6DD3FF" stroke-width="2" opacity="0.3"/>
+<circle cx="200" cy="250" r="180" fill="none" stroke="#A78BFA" stroke-width="1" opacity="0.2"/>
+
+<text x="200" y="490" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#63748A" opacity="0.7">Calm &amp; Connected</text>
+</svg>

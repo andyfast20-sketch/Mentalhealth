@@ -1,0 +1,24 @@
+name: Deploy to Fly
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@v6
+
+      - name: Deploy to Fly
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+          FLY_APP: ${{ secrets.FLY_APP }}
+        run: |
+          # deploy using the flyctl CLI; requires FLY_API_TOKEN and FLY_APP set in repo secrets
+          flyctl deploy --app "${FLY_APP}"

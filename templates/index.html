@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Home — Mentalhealth{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1 class="hero-title">You are not alone — care starts here</h1>
+        <p class="lede">Small steps, steady support. A compassionate hub of trusted information and tools to help you or someone you care about.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="{{ url_for('resources') }}">Read resources</a>
+          <a class="btn btn-ghost" href="{{ url_for('contact') }}">Get help now</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <!-- Primary hero image (external); fallback to local copy if remote isn't available -->
+        <img src="https://files.catbox.moe/it74a3.png"
+             alt="Two people offering support illustration"
+             onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/mental-health-person.svg') }}'">
+      </div>
+    </div>
+  </section>
+
+  <section class="features container">
+    <h2>What you'll find here</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Guides & Tools</h3>
+        <p>Practical, evidence-based steps for managing stress, anxiety, and mood.</p>
+      </article>
+      <article class="card">
+        <h3>Stories & Support</h3>
+        <p>Stories from people who’ve navigated similar journeys — with guidance on where to get help.</p>
+      </article>
+      <article class="card">
+        <h3>Resources</h3>
+        <p>Curated links to hotlines, self-help exercises, and professional services.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="container quote-inner">
+      <blockquote>
+        “You don’t have to see the whole staircase — just take the first step.”
+        <cite>— Adapted advice</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="newsletter container">
+    <div class="newsletter-inner">
+      <div>
+        <h3>Get gentle tips in your inbox</h3>
+        <p>Short, practical suggestions to help daily wellbeing — free and private.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks — this is a demo.');">
+        <input type="email" name="email" placeholder="you@example.com" aria-label="Email address">
+        <button class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+{% endblock %}
